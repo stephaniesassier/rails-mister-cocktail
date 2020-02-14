@@ -1,11 +1,19 @@
-<h1>All the cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.rhumeriedechamarel.com/wp-content/uploads/2015/10/SPECIALS_banner.jpg);">
+  <div class="container">
+    <h1><strong>Cocktails</strong></h1>
+    <p><em>Create a cocktail or Choose your favorite</em></p>
+  </div>
+</div>
 
-<div>
+<div class="card">
   <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    <div class="card-category">
+      <img src="https://images.unsplash.com/photo-1556855810-ac404aa91e85?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="cocktail">
+      <%= link_to cocktail.name, cocktail_path(cocktail), style: 'text-decoration: none' %>
+    </div>
   <% end %>
 </div>
-<br>
-<div>
-  <%= link_to "Create a cocktail", new_cocktail_path %>
-</div>
+
+ <div class="button">
+    <%= link_to "Create a cocktail", new_cocktail_path, style: 'text-decoration: none' %>
+  </div>
