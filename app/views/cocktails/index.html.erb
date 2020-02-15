@@ -5,6 +5,10 @@
   </div>
 </div>
 
+<div class="button">
+    <%= link_to "Create a cocktail", new_cocktail_path, style: 'text-decoration: none' %>
+</div>
+
 <div class="card">
   <% @cocktails.each do |cocktail| %>
     <div class="card-category">
@@ -13,7 +17,3 @@
     </div>
   <% end %>
 </div>
-
- <div class="button">
-    <%= link_to "Create a cocktail", new_cocktail_path, style: 'text-decoration: none' %>
-  </div>
