@@ -5,7 +5,8 @@
 
 <div>
   <% @cocktail.doses.each do |dose| %>
-    <p><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Delete", dose_path(dose), method: :delete %></p>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+    <p><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
   <% end %>
 </div>
 
