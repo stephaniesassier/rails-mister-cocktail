@@ -9,7 +9,7 @@
     </div>
 
     <div class="create">
-      <%= link_to "Back", cocktails_path %>
+      <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
     </div>
   </div>
 
@@ -33,10 +33,6 @@
          <%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to icon('fas', 'trash'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
       </div>
     <% end %>
-  </div>
-
-  <div class="button_cocktail">
-    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "button_banner_custom" %>
   </div>
 
   <div class="footer">

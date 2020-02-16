@@ -67,6 +67,9 @@ a {
       padding-bottom: 5px;
       padding-left: 20px;
       padding-right: 20px;
+        & h3 {
+          font-size: 20px;
+        }
     }
     & .card-category-cocktail {
       text-align: center;
@@ -87,4 +90,6 @@ a {
   text-align: center;
   color: #B7902F;
   padding-bottom: 10px;
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
 }
