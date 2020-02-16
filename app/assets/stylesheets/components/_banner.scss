@@ -1,0 +1,9 @@
+.banner {
+  display: grid;
+  grid-template-columns: auto-fit (1fr 1fr 1fr 1fr);
+  grid-template-rows: auto-fit(2fr 1fr 1fr 2fr);
+  grid-template-areas: ". . . ." ". title . ." ". button_banner . ." ". . . .";
+  color: #B7902F;
+  background-size: cover;
+  min-height: 100vh;
+}
