@@ -1,13 +1,16 @@
 <div class="container">
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
     <div class="logo">
-      <a class="fas fa-cocktail" href="#">
-        <%= link_to'', cocktails_path %>
-      </a>
+        <%= link_to icon('fas', 'cocktail'), cocktails_path %>
+    </div>
+
+    <div class="title-index">
+      <h2>Cocktails</h2>
     </div>
 
     <div class="create">
-      <%= link_to "back", cocktails_path %>
+      <%= link_to "Back", cocktails_path %>
     </div>
   </div>
 
