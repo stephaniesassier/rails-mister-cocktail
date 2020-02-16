@@ -1,23 +1,46 @@
-<div>
-  <h2><%= @cocktail.name %></h2>
-</div>
-<br>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-<div>
-  <% @cocktail.doses.each do |dose| %>
-    <% if @cocktail.photo.attached? %>
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-      <%= cl_image_tag ('t8b1dfa7a7ezk6zpaqr5'), height: 300, width: 285 , crop: :fill %>
+    <div class="logo">
+        <%= link_to icon('fas', 'cocktail'), cocktails_path %>
+    </div>
+
+    <div class="title-index">
+      <h2>Cocktails</h2>
+    </div>
+
+    <div class="create">
+      <%= link_to "Back", cocktails_path %>
+    </div>
+  </div>
+
+  <div class="card">
+      <div class="card-category-cocktail">
+        <% if @cocktail.photo.attached? %>
+            <%= cl_image_tag @cocktail.photo.key, height: 300, width: 285, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag ('t8b1dfa7a7ezk6zpaqr5'), height: 300, width: 285 , crop: :fill %>
+        <% end %>
+        <div class="card-name-cocktail">
+          <h3><%= @cocktail.name %></h3>
+        </div>
+      </div>
+  </div>
+
+
+  <div>
+    <% @cocktail.doses.each do |dose| %>
+      <div class="description-cocktail">
+         <%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to icon('fas', 'trash'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
+      </div>
     <% end %>
-    <p><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
-  <% end %>
-</div>
+  </div>
 
-<div>
-  <%= link_to "< Add a dose", new_cocktail_dose_path(@cocktail) %>
-</div>
+  <div class="button_cocktail">
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "button_banner_custom" %>
+  </div>
 
-<div>
-  <%= link_to "< Back to all cocktail", cocktails_path %>
+  <div class="footer">
+    L’abus d’alcool est dangereux pour la santé - <i class="fas fa-cocktail"></i> Cocktails
+  </div>
 </div>

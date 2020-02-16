@@ -1,7 +1,23 @@
-<h1>Add a name</h1>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="logo">
+      <a class="fas fa-cocktail" href="#">
+        <%= link_to'', cocktails_path %>
+      </a>
+    </div>
+
+    <div class="create">
+      <%= link_to "back", cocktails_path %>
+    </div>
+  </div>
+
+  <div class="container-form">
+    <div class=title-form>
+    <h1>Add a name</h1>
+  </div>
 
 <%= simple_form_for [@cocktail] do |f| %>
   <%= f.input :name %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <%= f.submit "add a cocktail" %>
 <% end %>

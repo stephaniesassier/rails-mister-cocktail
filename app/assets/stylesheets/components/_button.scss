@@ -4,6 +4,14 @@
   justify-self: center;
 }
 
+.button_cocktail {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: 'Crimson Text', serif;
+  letter-spacing: .2rem;
+  justify-items: center;
+}
+
 .button_banner_custom {
   border: 1px solid #B7902F;
   border-radius: 5px;
@@ -17,5 +25,6 @@
    &:hover {
       color: #765A14;
       text-decoration: none;
+      border: 1px solid #765A14;;
     }
 }

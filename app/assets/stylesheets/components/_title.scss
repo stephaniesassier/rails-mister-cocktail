@@ -1,0 +1,23 @@
+.title {
+      grid-area: title;
+      align-self: center;
+      text-align: center;
+        & h1 {
+          font-family: 'Crimson Text', serif;
+          letter-spacing: .4rem;
+          font-size: 85px;
+          color: #B7902F;
+        }
+        & p {
+          font-size: 18px;
+          opacity: .7;
+        }
+    }
+
+.title-form {
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+  letter-spacing: .4rem;
+  font-size: 48px;
+  color: #B7902F;
+}

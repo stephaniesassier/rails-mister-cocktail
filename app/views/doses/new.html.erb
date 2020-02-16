@@ -1,10 +1,30 @@
-<h1>Add a name</h1>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="logo">
+      <a class="fas fa-cocktail" href="#">
+        <%= link_to'', cocktails_path %>
+      </a>
+    </div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit "add an ingredient" %>
-<% end %>
+    <div class="title-index">
+      <h2>Cocktails</h2>
+    </div>
+
+    <div class="create">
+      <%= link_to "Back", cocktails_path %>
+    </div>
+  </div>
 
 
-<%= link_to "< back to the cocktails", cocktails_path %>
+<div class="container-form">
+  <div class=title-form>
+    <h1>Add a dose</h1>
+  </div>
+
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient, placeholder: "Choose the ingredient" %>
+    <%= f.input :description, placeholder:"Write the description" %>
+    <%= f.submit "add an ingredient" %>
+  <% end %>
+</div>

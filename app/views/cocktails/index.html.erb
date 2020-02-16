@@ -1,46 +1,37 @@
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-<div class="button">
-    <%= link_to "Create a cocktail", new_cocktail_path, style: 'text-decoration: none' %>
-</div>
-
-<div class="card">
-  <% @cocktails.each do |cocktail| %>
-    <div class="card-category">
-      <% if cocktail.photo.attached? %>
-      <%= cl_image_tag cocktail.photo.key, height: 300, width: 285 , crop: :fill %>
-      <% else %>
-      <%= cl_image_tag ('t8b1dfa7a7ezk6zpaqr5'), height: 300, width: 285 , crop: :fill %>
-      <% end %>
-      <%= link_to cocktail.name, cocktail_path(cocktail), style: 'text-decoration: none' %>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="logo">
+      <a class="fas fa-cocktail" href="#">
+        <%= link_to'', cocktails_path %>
+      </a>
     </div>
-  <% end %>
+
+    <div class="title-index">
+      <h2>Cocktails</h2>
+    </div>
+
+    <div class="create">
+      <%= link_to "Create", new_cocktail_path %>
+    </div>
+  </div>
+
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category">
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key, :quality=>"auto:good", height: 300, width: 285 , crop: :fill %>
+        <% else %>
+          <%= cl_image_tag ('t8b1dfa7a7ezk6zpaqr5'), height: 300, width: 285 , crop: :fill %>
+        <% end %>
+        <div class="card-name">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer">
+    <div class="footer-copyright">
+      L’abus d’alcool est dangereux pour la santé - <i class="fas fa-cocktail"></i> Cocktails
+    </div>
+  </div>
 </div>
