@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :cocktails, only: [:home, :index, :show, :new, :create] do
     resources :doses, only: [:new, :create, :destroy], shallow: true
   end
-  resources :contacts, :home, only: [:index, :new, :create]
+  resources :contacts, only: [:new, :create], shallow: true
 end
