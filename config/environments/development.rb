@@ -61,11 +61,6 @@ Rails.application.configure do
 
   config.active_storage.service = :cloudinary
 
-
-  echo "export SENDGRID_API_KEY='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'" > sendgrid.env
-  echo "sendgrid.env" >> .gitignore
-  source ./sendgrid.env
-
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
